@@ -4,7 +4,7 @@ function typeListTemplate(type){
     return `<section class="type">
     <a href="">
         <h2>${type.name}</h2>
-        <img src="/images/${type.name}.png" alt="teting">
+        <img src="../images/${type.name}.png" alt="teting">
     </a>
 </section>`
 }
