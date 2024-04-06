@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #f23400;
+    --secondary-color: #072e74;
+    --tertiary-color: #f19545;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.headerSection{
+    display: flex;
+    justify-content:space-between;
+    padding: 10px;
+    background-color: var(--secondary-color);
+}
+
+#logo{
+    width: 200px;
+}
+
+#logo a img{
+    width: 100%;
+    margin-top: 1rem;
+    
+}
+
+.ball img{
+    width: 80px;
+}
+
+#hero{
+    height: 600px;
+}
+
+#hero img{
+    height: 100%;
+    width: 100%;
+}
+
+#generations{
+    background-color: var(--primary-color);
+}
+
+#generations ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul li{
+    margin: 1rem;
+    border: 4px solid var(--tertiary-color);
+    border-radius: 10px;
+    text-align: center;
+}
+
+ul img{
+    width: 250px;
+    height: 150px;
+    background-color: var(--secondary-color);
+
+}
+
+li h2{
+    color: black;
+    background-color: #fdf035;
+}
+
+main h1{
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#types, #pokemons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.type, .pokemon{
+    margin: 2rem;
+    width: 350px;
+}
+
+.type img, .pokemon img{
+    width: 100%;
+}
+
+.type a, .pokemon a{
+    text-decoration: none;
+    color: black;
+}
+
