@@ -1,3 +1,12 @@
+// retrieve data from localstorage
+export function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+// save data to local storage
+export function setLocalStorage(key, data) {
+ localStorage.setItem(key, JSON.stringify(data));
+}
+
 export function getParams(param){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -6,7 +15,6 @@ export function getParams(param){
   }
 
   export function renderListWithTemplate(templateFn, parentElement, list, position = "afterbegin", clear = false ){
-    console.log(list);
     const htmlStrings = list.map(templateFn);
     if (clear){
       parentElement.innerHTML = "";

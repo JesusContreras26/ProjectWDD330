@@ -15,7 +15,9 @@ export default class data{
         return data;
     }
 
-    async getTypes(){
-        
+    async getPokemon(pokemon){
+        const res = await fetch(baseURL + "pokemon/" + pokemon)
+        const data = await convertToJSON(res);
+        return data;
     }
 }

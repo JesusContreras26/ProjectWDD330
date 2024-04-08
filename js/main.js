@@ -24,8 +24,7 @@ async function getPokemons(data, typesof, URL){
         let pokemonData = await getPokemonData(pokemon.name, URL)
         pokemonInf.push(pokemonData)
     }
-    console.log(pokemonInf);
-    console.log(types);
+
     let pokemonByTypes = [];
     for (const type of typesof) {
         pokemonByTypes.push({
@@ -45,7 +44,6 @@ async function getPokemons(data, typesof, URL){
 
         }
     
-    console.log(pokemonByTypes);
 }
 
 async function getPokemonData(pokemon, URL){

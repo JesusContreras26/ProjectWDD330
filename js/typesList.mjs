@@ -1,10 +1,9 @@
 import { renderListWithTemplate } from "./utils.mjs";
-import data from "./data.mjs";
-function typeListTemplate(type){
+function typeListTemplate(name){
     return `<section class="type">
-    <a href="">
-        <h2>${type.name}</h2>
-        <img src="../images/${type.name}.png" alt="teting">
+    <a href="../pokemons/pokemons.html?type=${name}">
+        <h2>${name}</h2>
+        <img src="../images/${name}.png" alt="teting">
     </a>
 </section>`
 }
@@ -18,8 +17,17 @@ export default class typesList{
     }
 
     async init(){
-        const pokemonData = await this.dataSource.getData(this.generation);
-        console.log(pokemonData.types);
-        renderListWithTemplate(typeListTemplate, this.listTag, pokemonData.types);
+        let types = [] 
+        
+        for (let index = 1; index <= parseInt(this.generation.charAt(0)); index++) {
+            const firstGen = await this.dataSource.getData(index + "/");
+            
+            firstGen.types.map((type)=>{
+                types.push(type.name);
+            })
+  
+        }
+
+        renderListWithTemplate(typeListTemplate, this.listTag, types);
     }
 }
