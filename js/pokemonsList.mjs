@@ -1,9 +1,9 @@
 import { renderListWithTemplate } from "./utils.mjs";
 function pokemonTemplate(pokemon) {
     return `<section class="pokemon">
-    <a href="">
+    <a href="../pokemon_stats/pokemon.html?pokemon=${pokemon.name}">
         <h2>${pokemon.name}</h2>
-        <img src="${pokemon.sprites.front_default}" alt="testing">
+        <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
     </a>
 </section>`
 }
