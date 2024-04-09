@@ -21,9 +21,10 @@ export default class typesList{
         
         for (let index = 1; index <= parseInt(this.generation.charAt(0)); index++) {
             const firstGen = await this.dataSource.getData(index + "/");
-            
             firstGen.types.map((type)=>{
-                types.push(type.name);
+                if (!(type.name === "unknown" || type.name === "shadow")){
+                    types.push(type.name);
+                }
             })
   
         }
