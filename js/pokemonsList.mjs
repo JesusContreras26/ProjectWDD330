@@ -22,14 +22,15 @@ export default class pokemonsList{
         pokemonGen = generationData.pokemon_species;
         let pokemonInf = [];
         let pokemonByTypes = [];
-        try {
-            for (const pokemon of pokemonGen) {
+
+        for (const pokemon of pokemonGen) {
+            try {
                 let pokemonData = await this.dataSource.getPokemon(pokemon.name);
                 console.log();
                 pokemonInf.push(pokemonData);
+            } catch (error) {
+                console.log(error);
             }
-        } catch (error) {
-            console.log("data not found")
         }
 
 

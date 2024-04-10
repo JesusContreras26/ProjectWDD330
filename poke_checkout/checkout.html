@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon-Types</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="../css/base.css">
-    <script src="../js/types.js" type="module"></script>
+    <script src="../js/checkout.js" type="module"></script>
 </head>
 <body>
     <header>
@@ -23,16 +23,28 @@
         </div>
     </header>
     <main>
-        <h1>Types</h1>
-        <div id="types">
+        <div class="checkout-bag">
+            <form action="">
+                <fieldset>
+                    <legend>Get Your Pokemons</legend>
+                    <div class="basic-inf">
+                        <label for="fname">First Name*<input type="text" name="fname" required></label>
+                        <label for="lname">Last Name*<input type="text" name="lname" required></label>
+                        <label for="email">Email*<input type="text" name="email"></label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Your Pokemons</legend>
+                    <div class="checkPoke">
+
+                    </div>
+                </fieldset>
+            </form>
         </div>
-
     </main>
-
     <footer>        
         <img src="../images/pikachu.png" alt="">
         <p>Jesus Contreras || WDD330-Project || ONLY for fun</p></footer>
     </footer>
 </body>
-
 </html>

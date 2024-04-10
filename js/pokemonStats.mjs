@@ -1,3 +1,5 @@
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+
 function renderPokemonStats(pokemon){
     if(pokemon.types.length === 2){
         return `<section id="pokemon">
@@ -14,7 +16,7 @@ function renderPokemonStats(pokemon){
         </div>
     </section>
     <h2>Stats</h2>
-    <section id="pokemonInf">
+    <section class="pokemonInf">
         <div class="stats1">
             <p>Hp: ${pokemon.stats[0].base_stat}</p>
             <p>Attack: ${pokemon.stats[1].base_stat}</p>
@@ -25,7 +27,8 @@ function renderPokemonStats(pokemon){
             <p>Special-defence: ${pokemon.stats[4].base_stat}</p>
             <p>Speed: ${pokemon.stats[5].base_stat}</p>
         </div>
-    </section>`;
+    </section>
+    <button id="addToBag">Catch it!</button>`;
     } else{
         return `<section id="pokemon">
         <div class="pokemon-name">
@@ -40,7 +43,7 @@ function renderPokemonStats(pokemon){
         </div>
     </section>
     <h2>Stats</h2>
-    <section id="pokemonInf">
+    <section class="pokemonInf">
         <div class="stats1">
             <p>Hp: ${pokemon.stats[0].base_stat}</p>
             <p>Attack: ${pokemon.stats[1].base_stat}</p>
@@ -51,7 +54,8 @@ function renderPokemonStats(pokemon){
             <p>Special-defence: ${pokemon.stats[4].base_stat}</p>
             <p>Speed: ${pokemon.stats[5].base_stat}</p>
         </div>
-    </section>`;
+    </section>
+    <button id="addToBag">Catch it!</button>`
     }
 
 }
@@ -64,13 +68,35 @@ export default class pokemonStats{
     }
 
     async init(){
-        const pokemonData = await this.dataSource.getPokemon(this.pokemon);
-        console.log(pokemonData.types.length);
-        this.renderTemplate(pokemonData)
-        console.log(pokemonData);
+        this.pokemonData = await this.dataSource.getPokemon(this.pokemon);
+        this.renderTemplate(this.pokemonData)
+        document.getElementById("addToBag").addEventListener("click", this.addToBag.bind(this))
     }
 
     renderTemplate(pokemon){
         this.parenTag.insertAdjacentHTML("afterbegin", renderPokemonStats(pokemon));
+    }
+
+    addToBag(){
+        let content = getLocalStorage("pokemons-catched")
+        let control;
+        if (!content) {
+            content= [];
+        }
+        for (const pokemon of content) {
+            if (pokemon.name === this.pokemonData.name) {
+                control = 1;
+            }
+        }
+
+        if (control === 1 ) {
+            console.log("You already catched this pokemon")
+        }else if (content.length === 6){
+            console.log("Your bag is full!!")
+        }else{
+            content.push(this.pokemonData);
+            setLocalStorage("pokemons-catched", content);
+        }
+        
     }
 }

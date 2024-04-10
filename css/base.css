@@ -2,7 +2,7 @@
     --primary-color: #f23400;
     --secondary-color: #072e74;
     --tertiary-color: #f19545;
-
+    --box-shadow: 0 4px 8px 0 rgba(160, 60, 60, 0.767), 0 6px 20px 0 rgba(138, 71, 71, 0.521);
 }
 
 *{
@@ -44,10 +44,6 @@ body{
 #hero img{
     height: 100%;
     width: 100%;
-}
-
-#generations{
-
 }
 
 #generations ul{
@@ -96,7 +92,7 @@ main h1{
     margin: 2rem;
     width: 200px;
     border: 1px outset rgb(226, 226, 226);
-    box-shadow: 0 4px 8px 0 rgba(160, 60, 60, 0.767), 0 6px 20px 0 rgba(138, 71, 71, 0.521);
+    box-shadow: var(--box-shadow);
     padding-bottom: 2rem;
     border-radius: 8px;
     background-color:rgba(133, 13, 13, 0.068);
@@ -131,7 +127,7 @@ main h1{
     background-color: rgb(133, 1, 1);
     color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--box-shadow);
     margin-bottom: 2.5rem;
 }
 
@@ -159,7 +155,7 @@ main h1{
     margin: 0 auto;
 }
 
-#pokemonInf{
+.pokemonInf{
     display: flex;
     justify-content: space-between;
 }
@@ -170,7 +166,7 @@ main h1{
     border: 1px solid black;
     margin-top: 1rem;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--box-shadow);
     border: 1px solid black;
     
 }
@@ -186,11 +182,11 @@ main h1{
     color: black;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--box-shadow);
     border: 1px solid black;
 }
 
-#pokemonInf p{
+.pokemonInf p{
     font-size: 1.2rem;
     padding: 0.5rem;
     border: 1px solid black;
@@ -198,7 +194,7 @@ main h1{
     color: black;
     background-color: white;
     border-radius: 4px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--box-shadow);
     border: 1px solid black;
 }
 
@@ -212,7 +208,7 @@ main h1{
     background-color: white;
     border: 2px solid black;
     border-radius: 6px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: var(--box-shadow);
     margin: 0 auto;
 
 }
@@ -233,6 +229,97 @@ footer p{
 
 footer img{
     width: 3%;
+}
+
+.pokemons{
+    width: 15%;
+    margin: 1rem;
+    text-align: center;
+    background-color: rgba(133, 13, 13, 0.068);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+}
+
+.pokemons h2{
+    margin-top: 1rem;
+}
+
+.pokeTypeB, .statsB{
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+.pokeTypeB{
+    color: white;
+}
+
+.pokeTypeB p{
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+
+.pokemons img{
+    width: 90%;
+}
+
+.pokemon-bag{
+    display: flex;
+}
+
+.checkPoke{
+    display: flex;
+}
+
+.pokemonsCheck{
+    width: 15%;
+    margin: 1rem;
+    text-align: center;
+    background-color: rgba(133, 13, 13, 0.068);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+}
+
+.checkout{
+    margin: 2rem auto;
+    width: 10%;
+    display: block;
+    text-decoration: none;
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: var(--secondary-color);
+    color: yellow;
+}
+
+form{
+    margin: 2rem auto;
+    width: 80%;
+}
+
+form label, form input{
+    display: block;
+    margin-top: 0.25rem;   
+}
+
+.basic-inf{
+    margin: 1rem;
+}
+
+form input{
+    padding: 0.40rem;
+    width: 22%;
+}
+
+form legend{
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+form fieldset{
+    background-color: rgba(133, 13, 13, 0.068);
 }
 
 .grass{
