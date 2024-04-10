@@ -3,7 +3,7 @@ import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 function renderBag(pokemon){
     if(pokemon.types.length === 2){
         return `<section class="pokemons">
-        <h2>${pokemon.name}</h2>
+        <h2 class="pokemonName">${pokemon.name}</h2>
         <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
         <div class="pokeTypeB">
             <p class="${pokemon.types[0].type.name}">${pokemon.types[0].type.name}</p>
@@ -38,10 +38,15 @@ export default class pokeBag{
     }
 
     init(){
-        const pokemonsInBag = getLocalStorage(this.key);
+        this.pokemonsInBag = getLocalStorage(this.key);
+        if (!this.pokemonsInBag) {
+            this.pokemonsInBag = [];
+        }
         const parent = document.querySelector(this.parentTag);
 
-        renderListWithTemplate(renderBag, parent, pokemonsInBag)
+        renderListWithTemplate(renderBag, parent, this.pokemonsInBag)
 
     }
+
+
 }

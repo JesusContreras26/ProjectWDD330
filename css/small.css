@@ -1,0 +1,94 @@
+@media only screen and (max-width: 600px) {
+    #logo{
+        width: 100px;
+    }
+
+    .ball img{
+        width: 70px;
+    }
+
+    #hero {
+        height: 250px;
+    }
+
+    #generations li{
+        width: 250px;
+    }
+
+    #generations li img{
+        width: 100%;
+    }
+
+    .pokemon-name{
+        display: block;
+        font-size: 0.5rem;
+    }
+
+    .card{
+        width: 40%;
+    }
+
+    .pokeType{
+        display: block;
+        padding: rem;
+    }
+
+    .pokemonInf{
+        display: block;
+    }
+
+    .pokemon-bag{
+        display: block;
+        
+    }
+
+    .pokemons{
+        margin: 2rem auto;
+        width: 30%;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .pokeTypeB, .statsB{
+        display: block;
+    }
+
+    .pokeTypeB p, .statsB p{
+        margin: 0.5rem;
+    }
+
+    form input{
+        width: 100px;
+    }
+
+    .checkPoke{
+        display: block;
+    }
+
+    .pokemonsCheck{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: 2rem auto;
+        width: 30%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .checkout{
+        width: 30%;
+    }
+
+    #fname, #lname, #email{
+        width: 100%;
+    }
+
+    footer p{
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    footer img{
+        width: 10%;
+    }
+}

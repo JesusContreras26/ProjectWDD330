@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/small.css">
     <script src="../js/checkout.js" type="module"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "cgCnibmfokzZIzw0D",
+        });
+    })();
+    </script>
+
 </head>
 <body>
     <header>
@@ -24,21 +39,22 @@
     </header>
     <main>
         <div class="checkout-bag">
-            <form action="">
+            <form name="user">
                 <fieldset>
                     <legend>Get Your Pokemons</legend>
                     <div class="basic-inf">
-                        <label for="fname">First Name*<input type="text" name="fname" required></label>
-                        <label for="lname">Last Name*<input type="text" name="lname" required></label>
-                        <label for="email">Email*<input type="text" name="email"></label>
+                        <label for="fname">First Name*<input type="text" name="fname" required id="fname"></label>
+                        <label for="lname">Last Name*<input type="text" name="lname" required id="lname"></label>
+                        <label for="email">Email*<input type="text" name="email" id="email"></label>
                     </div>
                 </fieldset>
                 <fieldset>
                     <legend>Your Pokemons</legend>
                     <div class="checkPoke">
-
+                        
                     </div>
                 </fieldset>
+                <button type="submit" id="checkSubmit">Checkout</button>
             </form>
         </div>
     </main>

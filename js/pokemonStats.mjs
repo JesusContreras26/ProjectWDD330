@@ -80,6 +80,7 @@ export default class pokemonStats{
     addToBag(){
         let content = getLocalStorage("pokemons-catched")
         let control;
+        let parenTag = document.querySelector("main");
         if (!content) {
             content= [];
         }
@@ -90,12 +91,43 @@ export default class pokemonStats{
         }
 
         if (control === 1 ) {
-            console.log("You already catched this pokemon")
+            if( parenTag.childNodes.length <= 3){
+                let message = document.createElement("div");
+                message.innerHTML = `<p>You already have catched that pokemon!! <span>X</span></p>`;
+                message.id = "error-catch";
+                parenTag.insertBefore(message, parenTag.firstChild);
+                message.addEventListener("click", function(e){
+                    if(e.target.tagName == "SPAN"){
+                      parenTag.removeChild(this);
+                    }
+                  })
+            }
         }else if (content.length === 6){
-            console.log("Your bag is full!!")
+            if (parenTag.childNodes.length <= 3) {
+                let message = document.createElement("div");
+                message.innerHTML = `Your bag of pokemons is full Master!!<span>X</span>`;
+                message.id = "error-catch";
+                parenTag.insertBefore(message, parenTag.firstChild);
+                message.addEventListener("click", function(e){
+                    if(e.target.tagName == "SPAN"){
+                      parenTag.removeChild(this);
+                    }
+                })
+            }
         }else{
-            content.push(this.pokemonData);
-            setLocalStorage("pokemons-catched", content);
+            if (parenTag.childNodes.length <= 3) {
+                content.push(this.pokemonData);
+                setLocalStorage("pokemons-catched", content);
+                let message = document.createElement("div");
+                message.innerHTML = `Great!! You got a new Pokemon in your bag Master!<span>X</span>`;
+                message.id = "error-catch";
+                parenTag.insertBefore(message, parenTag.firstChild);
+                message.addEventListener("click", function(e){
+                    if(e.target.tagName == "SPAN"){
+                      parenTag.removeChild(this);
+                    }
+                })
+            }
         }
         
     }

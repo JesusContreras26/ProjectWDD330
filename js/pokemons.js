@@ -8,5 +8,4 @@ const htmlTag = document.querySelector("#pokemons");
 const generation = getLocalStorage("generation"); 
 const pokemons = new pokemonsList(dataS, type, htmlTag, generation.charAt(0));
 
-console.log(generation.charAt(0));
 pokemons.init();

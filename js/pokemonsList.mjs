@@ -26,7 +26,6 @@ export default class pokemonsList{
         for (const pokemon of pokemonGen) {
             try {
                 let pokemonData = await this.dataSource.getPokemon(pokemon.name);
-                console.log();
                 pokemonInf.push(pokemonData);
             } catch (error) {
                 console.log(error);
@@ -43,7 +42,6 @@ export default class pokemonsList{
             }
 
         }
-        console.log(pokemonByTypes);
 
         renderListWithTemplate(pokemonTemplate, this.lisTag, pokemonByTypes);
     }
